@@ -1,4 +1,4 @@
 TODO
 ====
 
-* Make helper for schedules, note that you need both a startAt and endAt
+* Make a payment object, and figure how to make it work with /create.

@@ -9,9 +9,9 @@ A Client wrapper for the chainlink smartoracles JSON RPC-API.
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** for connection to the oracle.  Defaults to:
       host=localhost, port=5100, key: none, secret: none
 
-### create
+### createAssignment
 
-Call the [Create Endpoint](https://chainlink-docs.smartcontract.com/#create) of the Oracle.
+Call the [Create Assignment endpoint](https://chainlink-docs.smartcontract.com/#create) of the Oracle.
 
 **Parameters**
 
@@ -19,7 +19,37 @@ Call the [Create Endpoint](https://chainlink-docs.smartcontract.com/#create) of 
 -   `schedule` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** (optional)
 -   `version` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** the version of the assignment (optional, default `"1.0.0"`)
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** Server response
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** Create Result
+
+### getAssignment
+
+Call the [Show Assignment endpoint](https://chainlink-docs.smartcontract.com/#show) of the Oracle.
+
+**Parameters**
+
+-   `xid` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Assignment xid, as returned from `create`
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** Assigment details
+
+### createSnapshot
+
+Call the [Create Snapshot endpoint](https://chainlink-docs.smartcontract.com/#create8) for a specific `Assignment`.
+
+**Parameters**
+
+-   `xid` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Assiognment xid
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** Snapshot details
+
+### getSnapshot
+
+Call the [Show Snapshot endpoint](https://chainlink-docs.smartcontract.com/#show9) for a specific `Snapshot`.
+
+**Parameters**
+
+-   `xid` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Snapshot xid
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** Snapshot details
 
 ## Schedule
 
